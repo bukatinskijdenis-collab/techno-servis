@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <section class="contacts-hero">
+        <div class="container">
+            <div class="contacts-hero__text">
+                <h1 class="contacts-hero__title">Контакты</h1>
+                <p class="contacts-hero__subtitle">Свяжитесь с нами удобным для вас способом</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts-cards">
+        <div class="container">
+            <div class="contacts-cards__grid" id="contacts-container">
+                <!-- Сюда загрузятся контакты из Directus через contacts.js -->
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts-main">
+        <div class="container contacts-main__layout">
+            <section class="form-control" id="audit-form">
+                <h2 class="contacts-form__title">Получить бесплатный аудит</h2>
+                <div id="form-message" class="contacts-form__success" style="display:none;"></div>
+                <form id="audit-form-element" class="contacts-form__body" novalidate>
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Ваше имя</span>
+                        <input type="text" name="client_name" required>
+                    </label>
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Компания</span>
+                        <input type="text" name="company">
+                    </label>
+                    <div class="contacts-form__row">
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Телефон *</span>
+                            <input type="tel" name="client_phone" required>
+                        </label>
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Email *</span>
+                            <input type="email" name="client_email" required>
+                        </label>
+                    </div>
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Интересующая услуга</span>
+                        <select name="service">
+                            <option value="">-- Выберите --</option>
+                            <option value="IT Аутсорсинг">IT Аутсорсинг</option>
+                            <option value="Печатный Аутсорсинг">Печатный Аутсорсинг</option>
+                            <option value="Программное обеспечение">Программное обеспечение</option>
+                            <option value="Оборудование">Оборудование</option>
+                        </select>
+                    </label>
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Сообщение</span>
+                        <textarea name="message" rows="3"></textarea>
+                    </label>
+                    <button type="submit" class="contacts-form__submit">Отправить заявку</button>
+                    <p class="contacts-form__policy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                </form>
+            </section>
+
+            <section class="contacts-faq">
+                <h2 class="contacts-faq__title">Часто задаваемые вопросы</h2>
+                <div class="contacts-faq__list">
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Как быстро вы реагируете на инциденты?</h3>
+                        <p class="contacts-faq__answer">Время реакции зависит от выбранного тарифа: от 15 минут для премиум-пакета до 2 часов для базового.</p>
+                    </article>
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Какие гарантии вы предоставляете?</h3>
+                        <p class="contacts-faq__answer">Мы предоставляем SLA-гарантии на время реакции и решения инцидентов, а также гарантию возврата средств, если не соблюдаем условия договора.</p>
+                    </article>
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Можно ли начать с пробного периода?</h3>
+                        <p class="contacts-faq__answer">Да, мы предлагаем бесплатный аудит инфраструктуры и пробный месяц обслуживания со скидкой 50%.</p>
+                    </article>
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Обслуживаете ли вы компании за пределами Москвы?</h3>
+                        <p class="contacts-faq__answer">Да, мы работаем с клиентами по всей России. Для удаленной поддержки география не имеет значения.</p>
+                    </article>
+                </div>
+                <article class="contacts-schedule">
+                    <div class="contacts-schedule__icon"><img src="/static/img/svg/contact-4.svg" alt="Режим работы"></div>
+                    <div class="contacts-schedule__content">
+                        <h3 class="contacts-schedule__title">Режим работы</h3>
+                        <p class="contacts-schedule__text">Понедельник – Пятница: 9:00 – 18:00</p>
+                        <p class="contacts-schedule__text">Суббота – Воскресенье: выходной</p>
+                        <p class="contacts-schedule__support">Техническая поддержка: 24/7</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}
